@@ -53,9 +53,11 @@ functions {
  transformed parameters {
  matrix[J,K] b;
  matrix[J,K] l_theta;
+ matrix[J,K] theta;
  
   b = (diag_pre_multiply(tau, Omega)*z)';
   l_theta = a + b;
+  theta = exp(l_theta);
  }
 
 model {
